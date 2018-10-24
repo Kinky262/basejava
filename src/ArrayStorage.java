@@ -5,13 +5,13 @@ import java.util.Arrays;
  */
 public class ArrayStorage {
     Resume[] storage = new Resume[10000];
-    int size = size();
+    int size;
 
     void clear() {
         for (int j = 0; j < size; j++) {
             storage[j] = null;
-            size --;
         }
+        size = 0;
     }
 
     void save(Resume r) {
@@ -53,15 +53,6 @@ public class ArrayStorage {
     }
 
     int size() {
-        size = 0;
-
-        for (Resume i:storage) {
-            if (i != null) {
-                size++;
-            } else {
-                break;
-            }
-        }
         return size;
     }
 }
